@@ -68,6 +68,15 @@ window-rule {
         // Same as focus-ring.
     }
 
+    shadow {
+        // on
+        width 40
+        spread 5
+        offset x=0 y=5
+        color "#00000064"
+        // inactive-color "#00000064"
+    }
+
     geometry-corner-radius 12
     clip-to-geometry true
 
@@ -586,6 +595,25 @@ window-rule {
     border {
         on
         width 8
+    }
+}
+```
+
+#### `shadow`
+
+<sup>Since: next release</sup>
+
+Override the shadow options for the window.
+
+These rules have the same options as the normal shadow config in the [layout](./Configuration:-Layout.md) section, so check the documentation there.
+
+However, in addition to `on` to enable the shadow, this window rule has an `off` flag that disables the shadow for the window even if it was otherwise enabled.
+The `on` flag has precedence over the `off` flag, in case both are set.
+
+```kdl
+window-rule {
+    shadow {
+        on
     }
 }
 ```

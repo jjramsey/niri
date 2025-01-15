@@ -43,6 +43,15 @@ layout {
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view" in="srgb-linear"
     }
 
+    shadow {
+        // on
+        width 40
+        spread 5
+        offset x=0 y=5
+        color "#00000064"
+        // inactive-color "#00000064"
+    }
+
     insert-hint {
         // off
         color "#ffc87f80"
@@ -318,6 +327,34 @@ For example, `active-gradient from="#f00f" to="#0f05" angle=45 in="oklch longer 
 layout {
     border {
         active-gradient from="#f00f" to="#0f05" angle=45 in="oklch longer hue"
+    }
+}
+```
+
+### `shadow`
+
+<sup>Since: next release</sup>
+
+Shadow rendered behind a window.
+
+Set `on` to enable the shadow.
+
+`width` is the shadow size in logical pixels, same as CSS box-shadow *blur radius*.
+
+`spread` is the distance to expand the window rectangle in logical pixels, same as CSS box-shadow spread.
+
+`color` is the shadow color and opacity.
+
+`inactive-color` lets you override the shadow color for inactive windows; by default, `color` is used for all windows.
+
+```kdl
+layout {
+    shadow {
+        on
+        width 10
+        spread 5
+        color "#6006"
+        inactive-color "#0006"
     }
 }
 ```
